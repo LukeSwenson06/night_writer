@@ -10,6 +10,11 @@ attr_accessor :input,
   def read(input)
     file_reader = File.open(input, "r")
     file_reader.read.chomp
-    
+  end
+
+  def character_count(input)
+    lines = File.readlines(input)
+    text = lines.join
+    text.length
   end
 end
