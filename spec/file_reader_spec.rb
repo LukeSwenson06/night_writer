@@ -10,9 +10,8 @@ RSpec.describe FileReader do
 end
 
   it 'has attributes' do
-expect(@file_reader.input).to eq(ARGV[0])
-expect(@file_reader.output).to eq(ARGV[1])
+    expect(@file_reader.input).to eq(ARGV[0])
+    expect(@file_reader.output).to eq(ARGV[1])
 
-end
-
+  end
 end
