@@ -17,4 +17,8 @@ attr_accessor :input,
     text = lines.join
     text.length
   end
+
+  def welcome_message(input ,output)
+    "Created #{output} containing #{character_count(input)} characters"
+  end
 end

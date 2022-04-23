@@ -22,6 +22,6 @@ RSpec.describe FileReader do
   end
 
   it 'has a welcome message' do
-    expect(@file_reader.welcome_message("braille.txt")).to eq("Created braille.txt containing 49 characters")
+    expect(@file_reader.welcome_message("message.txt","braille.txt")).to eq("Created braille.txt containing 49 characters")
   end
 end
