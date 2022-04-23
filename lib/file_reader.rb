@@ -18,7 +18,6 @@ attr_accessor :input,
     text.length
   end
 
-  def welcome_message(input ,output)
-    "Created #{output} containing #{character_count(input)} characters"
+  def welcome_message(input, output)
+   "Created #{output} containing #{character_count(input)} characters"
   end
-end
