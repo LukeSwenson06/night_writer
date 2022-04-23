@@ -22,8 +22,8 @@ attr_accessor :input,
   end
 
   def start(input, output)
-    store = read
-    capitalized = store.upcase
+    read_file = read
+    capitalized = read_file.upcase
     @input.close
     @output.write(capitalized)
     @output.close
