@@ -25,13 +25,8 @@ RSpec.describe FileReader do
     expect(@file_reader.welcome_message("message.txt","braille.txt")).to eq("Created braille.txt containing 49 characters")
   end
 
-  it "can close the file" do
-    @file_reader.read
-    expect(@file_reader.close("message.txt")).to eq(nil)
+  it "runs the script of nightwriter" do
+    expect(@file_reader.start("message.txt", "braille.txt")).to eq(nil)#"Created braille.txt containing 49 characters"
 
   end
-
-  # it "can write into the file" do
-  #   expect(@file_reader.write("braille.txt")).to eq("HELLO THIS IS A MESSAGE FROM THE WATER AUTHORITY")
-  end
-# end
+end

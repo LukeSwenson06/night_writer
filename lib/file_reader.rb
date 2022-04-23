@@ -8,7 +8,7 @@ attr_accessor :input,
   end
 
   def read
-    @input.read.chomp
+    @input.read.strip
   end
 
   def character_count(input)
@@ -21,10 +21,12 @@ attr_accessor :input,
    "Created #{output} containing #{character_count(input)} characters"
   end
 
-  def close(input)
-      @output.close
+  def start(input, output)
+    store = read
+    capitalized = store.upcase
+    @input.close
+    @output.write(capitalized)
+    @output.close
+    puts welcome_message(input, output)
   end
-  #
-  # def write(output)
-  #     file_reader = File.open(output, "w")
 end
