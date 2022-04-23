@@ -41,7 +41,7 @@ describe EnglishToBrailleDictionary do
       'y' => ['OO', '.O', 'OO'],
       'z' => ['O.', '.O', 'OO']
 }
-    expect(@english_to_braille.englishdictionary).to eq(expected)
+    expect(@english_to_braille.english_dictionary).to eq(expected)
 
   end
 end
