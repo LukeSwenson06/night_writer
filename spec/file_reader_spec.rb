@@ -31,5 +31,8 @@ RSpec.describe FileReader do
 
   end
 
-  
+  it "can write into the file" do
+    expect(@file_reader.write("braille.txt")).to eq("HELLO THIS IS A MESSAGE FROM THE WATER AUTHORITY")
+
+  end
 end
