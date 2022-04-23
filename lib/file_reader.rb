@@ -3,13 +3,12 @@ attr_accessor :input,
               :output
 
   def initialize(input, output)
-    @input = ARGV[0]
-    @output = ARGV[1]
+    @input = File.open(input, "r")
+    @output = File.open(output, "w")
   end
 
-  def read(input)
-    file_reader = File.open(input, "r")
-    file_reader.read.chomp
+  def read
+    @input.read.chomp
   end
 
   def character_count(input)
@@ -23,7 +22,9 @@ attr_accessor :input,
   end
 
   def close(input)
-      file_reader = File.open(input, "r")
-      file_reader.close
+      @output.close
   end
+  #
+  # def write(output)
+  #     file_reader = File.open(output, "w")
 end
