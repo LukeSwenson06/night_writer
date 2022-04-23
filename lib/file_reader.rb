@@ -6,4 +6,10 @@ attr_accessor :input,
     @input = ARGV[0]
     @output = ARGV[1]
   end
+
+  def read(input)
+    file_reader = File.open(input, "r")
+    file_reader.read.chomp
+    
+  end
 end

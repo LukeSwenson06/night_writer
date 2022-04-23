@@ -15,3 +15,5 @@ total_characters = text.length
 puts "#{total_characters} characters"
 
 puts "Created #{ARGV[1]} containing #{total_characters} characters"
+
+# nightwriter = NightWriter.new(ARGV[0], ARGV[1])

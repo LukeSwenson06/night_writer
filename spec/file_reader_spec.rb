@@ -11,16 +11,13 @@ RSpec.describe FileReader do
     expect(@file_reader).to be_a(FileReader)
   end
 
-  it "has attributes" do
-    expect(@file_reader.input).to eq(ARGV[0])
-    expect(@file_reader.output).to eq(ARGV[1])
+  it "can open and read the file" do
+    expect(@file_reader.read("message.txt")).to eq('hello this is a message from the water authority')
 
   end
 
-  it "can open and read the file" do
-    @file_reader = File.open("message.txt", "r")
-    expect(@file_reader.read).to eq('hello this is a message from the water authority')
-
+  it "can read character count" do
+    expect(@file_reader.character_count("message.txt")).to eq(49)
 
   end
 end
