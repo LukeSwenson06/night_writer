@@ -21,3 +21,9 @@ attr_accessor :input,
   def welcome_message(input, output)
    "Created #{output} containing #{character_count(input)} characters"
   end
+
+  def close(input)
+      file_reader = File.open(input, "r")
+      file_reader.close
+  end
+end
