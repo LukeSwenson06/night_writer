@@ -48,6 +48,6 @@ describe Translator do
     expect(@translator.english_to_braille_top('a')).to eq('O.')
     expect(@translator.english_to_braille_top(" ")).to eq('..')
     expect(@translator.english_to_braille_middle('h')).to eq('OO')
-    expect(@translator.english_dictionary_bottom('w')).to eq('.O')
+    expect(@translator.english_to_braille_bottom('w')).to eq('.O')
   end
 end
