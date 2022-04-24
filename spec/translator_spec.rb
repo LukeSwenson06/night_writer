@@ -42,6 +42,12 @@ describe Translator do
         'z' => {top: 'O.', middle: '.O', bottom: 'OO'}
       }
     expect(@translator.english_dictionary).to eq(expected)
+  end
 
+  it "can call right key to the hash given the right arguement" do
+    expect(@translator.english_to_braille_top('a')).to eq('O.')
+    expect(@translator.english_to_braille_top(" ")).to eq('..')
+    expect(@translator.english_to_braille_middle('h')).to eq('OO')
+    expect(@translator.english_dictionary_bottom('w')).to eq('.O')
   end
 end
