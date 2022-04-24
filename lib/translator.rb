@@ -36,8 +36,6 @@ class Translator < EnglishToBrailleDictionary
     row1 = english_to_braille_top(letter)
     row2 = english_to_braille_middle(letter)
     row3 = english_to_braille_bottom(letter)
-    # require "pry";binding.pry
     braille_character = ("#{row1} \n" "#{row2} \n" "#{row3}")
-
   end
 end
