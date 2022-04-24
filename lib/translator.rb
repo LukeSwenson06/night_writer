@@ -31,4 +31,13 @@ class Translator < EnglishToBrailleDictionary
       english_dictionary[letter][:bottom]
     end
   end
+
+  def braille_rows(letter)
+    row1 = english_to_braille_top(letter)
+    row2 = english_to_braille_middle(letter)
+    row3 = english_to_braille_bottom(letter)
+    # require "pry";binding.pry
+    braille_character = ("#{row1} \n" "#{row2} \n" "#{row3}")
+
+  end
 end

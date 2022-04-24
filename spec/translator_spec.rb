@@ -50,4 +50,9 @@ describe Translator do
     expect(@translator.english_to_braille_middle('h')).to eq('OO')
     expect(@translator.english_to_braille_bottom('w')).to eq('.O')
   end
+
+  it "can put inputs into seperate arrays" do
+    expect(@translator.braille_rows('a')).to eq("O. \n.. \n..")
+
+  end
 end
