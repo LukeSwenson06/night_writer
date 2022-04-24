@@ -53,6 +53,8 @@ describe Translator do
 
   it "can put inputs into seperate arrays" do
     expect(@translator.braille_rows('a')).to eq("O. \n.. \n..")
+    expect(@translator.braille_rows('c')).to eq("OO \n.. \n..")
+    expect(@translator.braille_rows('y')).to eq("OO \n.O \nOO")
 
   end
 end
