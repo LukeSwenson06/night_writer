@@ -38,4 +38,12 @@ class Translator < EnglishToBrailleDictionary
     row3 = english_to_braille_bottom(letter)
     braille_character = ("#{row1} \n" "#{row2} \n" "#{row3}")
   end
+
+  def english_to_braille(word)
+    braille_sentence = []
+    word.chars.each do |letter|
+      braille_sentence << braille_rows(letter)
+    end
+    braille_sentence.join
+  end
 end
