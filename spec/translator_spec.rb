@@ -59,7 +59,7 @@ describe Translator do
   end
 
   it "can translate english to braille with multiple characters" do
-    expect(@translator.english_to_braille('tod')).to eq(
+    expect(@translator.english_to_braille('todi')).to eq(
       ".O \nOO \nO.O. \n.O \nO.OO \n.O \n..")
 
   end

@@ -45,3 +45,5 @@ class Translator < EnglishToBrailleDictionary
     braille_sentence.join
   end
 end
+
+this is a test
