@@ -1,7 +1,7 @@
 require_relative 'translator'
 require_relative 'english_to_braille_dictionary'
 
-class FileReader < Translator
+class FileReader 
 attr_accessor :input,
               :output,
               :translator
@@ -24,22 +24,6 @@ attr_accessor :input,
 
   def welcome_message(input, output)
    "Created #{output} containing #{character_count(input)} characters"
-  end
-
-  def english_dictionary
-    super
-  end
-
-  def braille_rows(sentence)
-    super
-  end
-
-  def english_to_braille
-    super
-  end
-
-  def translate_braille(letter)
-    super
   end
 
   def start(input, output)

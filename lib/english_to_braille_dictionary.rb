@@ -30,7 +30,8 @@ class EnglishToBrailleDictionary
           'w' => {top: '.O', middle: 'OO', bottom: '.O'},
           'x' => {top: 'OO', middle: '..', bottom: 'OO'},
           'y' => {top: 'OO', middle: '.O', bottom: 'OO'},
-          'z' => {top: 'O.', middle: '.O', bottom: 'OO'}
+          'z' => {top: 'O.', middle: '.O', bottom: 'OO'},
+          ' '  =>{top: '..', middle: '..', bottom: '..'}
     }
 
   end

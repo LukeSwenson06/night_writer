@@ -20,8 +20,7 @@ class Translator < EnglishToBrailleDictionary
     word.chars.each do |letter|
       braille_sentence << translate_braille(letter)
     end
-    require "pry";binding.pry
-    braille_sentence.transpose
+    braille_sentence.transpose #each_slice(40).to_a
   end
 
 

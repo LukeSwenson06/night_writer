@@ -39,7 +39,8 @@ describe Translator do
         'w' => {top: '.O', middle: 'OO', bottom: '.O'},
         'x' => {top: 'OO', middle: '..', bottom: 'OO'},
         'y' => {top: 'OO', middle: '.O', bottom: 'OO'},
-        'z' => {top: 'O.', middle: '.O', bottom: 'OO'}
+        'z' => {top: 'O.', middle: '.O', bottom: 'OO'},
+        ' '  =>{top: '..', middle: '..', bottom: '..'}
       }
     expect(@translator.english_dictionary).to eq(expected)
   end
@@ -55,7 +56,13 @@ describe Translator do
     end
 
   it "can make rows for the braille characters" do
-      expect(@translator.braille_rows("hello")).to eq("O.O.O.O.O. \n OO.OO.O..O \n ....O.O.O.")
+      expect(@translator.braille_rows("hello")).to eq("O.O.O.O.O. \nOO.OO.O..O\n....O.O.O.")
+
+    end
+
+  it "it can do a newline when it hits 80 characters" do
+      expect(@translator.braille_split("hello my name is bob and i like cookies a lot of cookies")).
+      to eq("O.O.O.O.O...OOOO..OOO.OOO....O.O..O.O.O...O.OOOO...O..O..OO.O...OOO.O.O..OO..O..O...O.O..O..O.OO..OO....OO..O...O.......O.....O.......O.........O...O.......O.O.O.....O.......O.O.O...O.......O.O.O.....O.")
 
     end
   end
