@@ -60,7 +60,7 @@ describe Translator do
 
     end
 
-  xit "it can do a newline when it hits 80 characters" do
+  it "it can do a newline when it hits 80 characters" do
       expect(@translator.braille_split("hello my name is bob and i like cookies a lot of cookies")).
       to eq("O.O.O.O.O...OOOO..OOO.OOO....O.O..O.O.O...O.OOOO...O..O..OO.O...OOO.O.O..OO..O..O...O.O..O..O.OO..OO....OO..O...O.......O.....O.......O.........O...O.......O.O.O.....O.......O.O.O...O.......O.O.O.....O.")
 
