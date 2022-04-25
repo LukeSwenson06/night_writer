@@ -45,22 +45,12 @@ describe Translator do
   end
 
   it "can call right key to the hash given the right arguement" do
-    expect(@translator.english_to_braille_top('a')).to eq('O.')
-    expect(@translator.english_to_braille_top(" ")).to eq('..')
-    expect(@translator.english_to_braille_middle('h')).to eq('OO')
-    expect(@translator.english_to_braille_bottom('w')).to eq('.O')
-  end
-
-  it "can put inputs into seperate arrays" do
-    expect(@translator.braille_rows('a')).to eq("O. \n.. \n..")
-    expect(@translator.braille_rows('c')).to eq("OO \n.. \n..")
-    expect(@translator.braille_rows('y')).to eq("OO \n.O \nOO")
+    expect(@translator.translate_braille('a')).to eq(['O.','..','..'])
 
   end
 
-  it "can translate english to braille with multiple characters" do
-    expect(@translator.english_to_braille('todi')).to eq(
-      ".O \nOO \nO.O. \n.O \nO.OO \n.O \n..")
-
+  it "can create multiple characters out of words" do
+    expect(@translator.english_to_braille('hello')).to eq([["O.", "OO", ".."],
+      ["O.", ".O", ".."], ["O.", "O.","O."], ["O.", "O.", "O."], ["O.", ".O", "O."]])
+    end
   end
-end

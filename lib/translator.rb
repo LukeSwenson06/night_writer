@@ -6,44 +6,20 @@ class Translator < EnglishToBrailleDictionary
     super
   end
 
-  def english_to_braille_top(letter)
-    if letter == " "
-      ".."
-    else
-      english_dictionary[letter][:top]
+  def translate_braille(letter)
+    empty_array = []
+    if english_dictionary.include?(letter)
+      empty_array << english_dictionary[letter][:top]
+      empty_array << english_dictionary[letter][:middle]
+      empty_array << english_dictionary[letter][:bottom]
     end
-  end
-
-  def english_to_braille_middle(letter)
-    if letter == " "
-      ".."
-    else
-      english_dictionary[letter][:middle]
-    end
-  end
-
-  def english_to_braille_bottom(letter)
-    if letter == " "
-      ".."
-    else
-      english_dictionary[letter][:bottom]
-    end
-  end
-
-  def braille_rows(letter)
-    row1 = english_to_braille_top(letter)
-    row2 = english_to_braille_middle(letter)
-    row3 = english_to_braille_bottom(letter)
-    braille_character = ("#{row1} \n" "#{row2} \n" "#{row3}")
   end
 
   def english_to_braille(word)
     braille_sentence = []
     word.chars.each do |letter|
-      braille_sentence << braille_rows(letter)
+      braille_sentence << translate_braille(letter)
     end
-    braille_sentence.join
+    braille_sentence
   end
 end
-
-this is a test
