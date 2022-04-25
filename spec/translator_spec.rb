@@ -50,7 +50,12 @@ describe Translator do
   end
 
   it "can create multiple characters out of words" do
-    expect(@translator.english_to_braille('hello')).to eq([["O.", "OO", ".."],
-      ["O.", ".O", ".."], ["O.", "O.","O."], ["O.", "O.", "O."], ["O.", ".O", "O."]])
+    expect(@translator.english_to_braille('hello')).to eq([["O.", "O.", "O.", "O.", "O."],
+      ["OO", ".O", "O.", "O.", ".O"], ["..", "..", "O.", "O.", "O."]])
+    end
+
+  it "can make rows for the braille characters" do
+      expect(@translator.braille_rows("hello")).to eq("O.O.O.O.O. \n OO.OO.O..O \n ....O.O.O.")
+
     end
   end

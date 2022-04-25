@@ -2,13 +2,12 @@ require_relative 'translator'
 
 class FileReader
 attr_accessor :input,
-              :output,
-              :translator
+              :output
+
 
   def initialize(input, output)
     @input = File.open(input, "r")
     @output = File.open(output, "w")
-    @translator = Translator.new
   end
 
   def read
@@ -29,7 +28,7 @@ attr_accessor :input,
     read_file = read
     capitalized = read_file.upcase
     @input.close
-    @output.write(capitalized)
+    @output.write(@translator.braille_rows(input))
     @output.close
     puts welcome_message(input, output)
   end
