@@ -1,13 +1,15 @@
 require_relative 'translator'
+require_relative 'english_to_braille_dictionary'
 
-class FileReader
+class FileReader < Translator
 attr_accessor :input,
-              :output
-
+              :output,
+              :translator
 
   def initialize(input, output)
     @input = File.open(input, "r")
     @output = File.open(output, "w")
+    @translator = Translator.new
   end
 
   def read
@@ -24,11 +26,26 @@ attr_accessor :input,
    "Created #{output} containing #{character_count(input)} characters"
   end
 
+  def english_dictionary
+    super
+  end
+
+  def braille_rows(sentence)
+    super
+  end
+
+  def english_to_braille
+    super
+  end
+
+  def translate_braille(letter)
+    super
+  end
+
   def start(input, output)
     read_file = read
-    capitalized = read_file.upcase
     @input.close
-    @output.write(@translator.braille_rows(input))
+    @output.write(@translator.braille_rows(read_file))
     @output.close
     puts welcome_message(input, output)
   end

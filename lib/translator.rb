@@ -20,6 +20,7 @@ class Translator < EnglishToBrailleDictionary
     word.chars.each do |letter|
       braille_sentence << translate_braille(letter)
     end
+    require "pry";binding.pry
     braille_sentence.transpose
   end
 
@@ -29,6 +30,6 @@ class Translator < EnglishToBrailleDictionary
     row1 = braille_transposed[0].join
     row2 = braille_transposed[1].join
     row3 = braille_transposed[2].join
-    braille = ("#{row1}\n#{row2}\n#{row3 }")
+    braille = ("#{row1} \n#{row2}\n#{row3 }")
   end
 end

@@ -39,7 +39,8 @@ describe EnglishToBrailleDictionary do
         'w' => {top: '.O', middle: 'OO', bottom: '.O'},
         'x' => {top: 'OO', middle: '..', bottom: 'OO'},
         'y' => {top: 'OO', middle: '.O', bottom: 'OO'},
-        'z' => {top: 'O.', middle: '.O', bottom: 'OO'}
+        'z' => {top: 'O.', middle: '.O', bottom: 'OO'},
+        ' '  =>{top: '..', middle: '..', bottom: '..'}
 }
     expect(@english_to_braille.english_dictionary).to eq(expected)
 
