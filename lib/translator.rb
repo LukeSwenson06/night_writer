@@ -2,10 +2,6 @@ require_relative 'english_to_braille_dictionary'
 
 class Translator < EnglishToBrailleDictionary
 
-  def english_dictionary
-    super
-  end
-
   def translate_braille(letter)
     empty_array = []
     if english_dictionary.include?(letter)

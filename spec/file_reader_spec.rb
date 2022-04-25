@@ -5,10 +5,12 @@ require './lib/file_reader'
 RSpec.describe FileReader do
   before :each do
     @file_reader = FileReader.new("message.txt", "braille.txt")
+    @translator = Translator.new
   end
 
   it 'exists' do
     expect(@file_reader).to be_a(FileReader)
+    expect(@translator).to be_a(Translator)
   end
 
   it "can open and read the file" do
