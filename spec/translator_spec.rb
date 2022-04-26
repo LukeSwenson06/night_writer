@@ -65,4 +65,19 @@ describe Translator do
   ["..", "..", "O.", "O.", "O.", "..", "O.", "..", "..", "..", "O.", "O.", "O.", "..", "..", "O."]]])
 
   end
+
+  it "can put all braille into a row" do
+      expect(@translator.braille_rows("hello my name is bob and i like cookies a lot of cookies")).to be_a(Array)
+    end
+
+  it "can split all the braille " do
+    expect(@translator.braille_split("hello my name is bob and i like cookies a lot of cookies")).
+    to eq(["O.O.O.O.O...OOOO..OOO.OOO....O.O..O.O.O...O.OOOO...O..O..OO.O...OOO.O.O..OO..O..",
+      "OO.OO.O..O.....O...O.....O..O.O...O..OO......O.O..O...O.O....O.....O.O..O..OO...",
+      "....O.O.O...O.OO..O...O.......O.....O.......O.........O...O.......O.O.O.....O...",
+      "O...O.O..O..O.OO..OOO.O.O..OO..O",
+      "....O..OOO...OO......O.O..O..OO.",
+      "....O.O.O...O.......O.O.O.....O."]
+  )
+  end
 end

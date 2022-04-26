@@ -27,4 +27,16 @@ class Translator < EnglishToBrailleDictionary
     end
     transposed_braille
   end
+
+  def braille_rows(sentence)
+    transposed_braille = braille_transposed(sentence)
+    braille_array = []
+    transposed_braille.each do |sentence|
+      top = sentence[0].join
+      middle = sentence[1].join
+      bottom = sentence[2].join
+      braille_array << [top, middle, bottom]
+      end
+      braille_array
+  end
 end
