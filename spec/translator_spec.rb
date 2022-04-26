@@ -55,7 +55,7 @@ describe Translator do
     expect(@translator.english_to_braille("hello my name is bob and i like cookies a lot of cookies")).to be_a(Array)
     end
 
-  xit "it can transpose all the arrays" do
+  it "it can transpose all the arrays" do
       expect(@translator.braille_transposed("hello my name is bob and i like cookies a lot of cookies")).
       to eq([[["O.", "O.", "O.", "O.", "O.", "..", "OO", "OO", "..", "OO", "O.", "OO", "O.", "..", ".O", ".O", "..", "O.", "O.", "O.", "..", "O.", "OO", "OO", "..", ".O", "..", "O.", ".O", "O.", "O.", "..", "OO", "O.", "O.", "O.", ".O", "O.", ".O", ".."],
   ["OO", ".O", "O.", "O.", ".O", "..", "..", ".O", "..", ".O", "..", "..", ".O", "..", "O.", "O.", "..", "O.", ".O", "O.", "..", "..", ".O", ".O", "..", "O.", "..", "O.", "O.", "..", ".O", "..", "..", ".O", ".O", "..", "O.", ".O", "O.", ".."],
@@ -64,5 +64,5 @@ describe Translator do
   ["..", "..", "O.", ".O", "OO", "..", ".O", "O.", "..", "..", ".O", ".O", "..", "O.", ".O", "O."],
   ["..", "..", "O.", "O.", "O.", "..", "O.", "..", "..", "..", "O.", "O.", "O.", "..", "..", "O."]]])
 
-    end
+  end
 end
