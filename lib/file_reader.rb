@@ -1,7 +1,7 @@
 require_relative 'translator'
 require_relative 'english_to_braille_dictionary'
 
-class FileReader 
+class FileReader
 attr_accessor :input,
               :output,
               :translator
@@ -29,7 +29,7 @@ attr_accessor :input,
   def start(input, output)
     read_file = read
     @input.close
-    @output.write(@translator.braille_rows(read_file))
+    @output.write(@translator.finished_braille(read_file))
     @output.close
     puts welcome_message(input, output)
   end

@@ -1,8 +1,4 @@
 class EnglishToBrailleDictionary
-
-  def initialize
-  end
-
   def english_dictionary
     english_to_braille = {
           'a' => {top: 'O.', middle: '..', bottom: '..'},
