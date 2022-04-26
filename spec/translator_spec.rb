@@ -47,6 +47,7 @@ describe Translator do
 
   it "can call right key to the hash given the right arguement" do
     expect(@translator.translate_braille('a')).to eq(['O.','..','..'])
+    expect(@translator.translate_braille)('A')).to eq(['O.','..','..'])
 
   end
 
