@@ -4,10 +4,11 @@ class Translator < EnglishToBrailleDictionary
 
   def translate_braille(letter)
     empty_array = []
-    if english_dictionary.include?(letter)
-      empty_array << english_dictionary[letter][:top]
-      empty_array << english_dictionary[letter][:middle]
-      empty_array << english_dictionary[letter][:bottom]
+    lowercase = letter.downcase
+    if english_dictionary.include?(lowercase)
+      empty_array << english_dictionary[lowercase][:top]
+      empty_array << english_dictionary[lowercase][:middle]
+      empty_array << english_dictionary[lowercase][:bottom]
     end
   end
 
