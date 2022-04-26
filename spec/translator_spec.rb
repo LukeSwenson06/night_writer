@@ -80,4 +80,10 @@ describe Translator do
       "....O.O.O...O.......O.O.O.....O."]
   )
   end
+
+  it "can output braille properly formatted" do
+    expect(@translator.finished_braille("hello my name is bob and i like cookies a lot of cookies")).
+    to eq("O.O.O.O.O...OOOO..OOO.OOO....O.O..O.O.O...O.OOOO...O..O..OO.O...OOO.O.O..OO..O..\nOO.OO.O..O.....O...O.....O..O.O...O..OO......O.O..O...O.O....O.....O.O..O..OO...\n....O.O.O...O.OO..O...O.......O.....O.......O.........O...O.......O.O.O.....O...\nO...O.O..O..O.OO..OOO.O.O..OO..O\n....O..OOO...OO......O.O..O..OO.\n....O.O.O...O.......O.O.O.....O.\n")
+
+  end
 end

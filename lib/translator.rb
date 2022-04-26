@@ -39,4 +39,22 @@ class Translator < EnglishToBrailleDictionary
       end
       braille_array
   end
+
+  def braille_split(sentence)
+    braille_row = []
+    braille_rows(sentence).each do |row|
+      row.each do |line|
+        braille_row << line
+      end
+    end
+    braille_row
+  end
+
+  def finished_braille(sentence)
+    braille_string = ''
+    braille_split(sentence).each do |line|
+      braille_string += "#{line}\n"
+    end
+    braille_string
+  end
 end
