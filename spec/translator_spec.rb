@@ -50,19 +50,19 @@ describe Translator do
 
   end
 
-  it "can create multiple characters out of words" do
-    expect(@translator.english_to_braille('hello')).to eq([["O.", "O.", "O.", "O.", "O."],
-      ["OO", ".O", "O.", "O.", ".O"], ["..", "..", "O.", "O.", "O."]])
+  it "can create multiple characters out of words and split the at 40 characters" do
+    expect(@translator.english_to_braille('hello')).to eq([[["O.", "OO", ".."], ["O.", ".O", ".."], ["O.", "O.", "O."], ["O.", "O.", "O."], ["O.", ".O", "O."]]])
+    expect(@translator.english_to_braille("hello my name is bob and i like cookies a lot of cookies")).to be_a(Array)
     end
 
-  it "can make rows for the braille characters" do
-      expect(@translator.braille_rows("hello")).to eq("O.O.O.O.O. \nOO.OO.O..O\n....O.O.O.")
+  xit "it can transpose all the arrays" do
+      expect(@translator.braille_transposed("hello my name is bob and i like cookies a lot of cookies")).
+      to eq([[["O.", "O.", "O.", "O.", "O.", "..", "OO", "OO", "..", "OO", "O.", "OO", "O.", "..", ".O", ".O", "..", "O.", "O.", "O.", "..", "O.", "OO", "OO", "..", ".O", "..", "O.", ".O", "O.", "O.", "..", "OO", "O.", "O.", "O.", ".O", "O.", ".O", ".."],
+  ["OO", ".O", "O.", "O.", ".O", "..", "..", ".O", "..", ".O", "..", "..", ".O", "..", "O.", "O.", "..", "O.", ".O", "O.", "..", "..", ".O", ".O", "..", "O.", "..", "O.", "O.", "..", ".O", "..", "..", ".O", ".O", "..", "O.", ".O", "O.", ".."],
+  ["..", "..", "O.", "O.", "O.", "..", "O.", "OO", "..", "O.", "..", "O.", "..", "..", "..", "O.", "..", "..", "O.", "..", "..", "..", "O.", "..", "..", "..", "..", "O.", "..", "O.", "..", "..", "..", "O.", "O.", "O.", "..", "..", "O.", ".."]],
+ [["O.", "..", "O.", "O.", ".O", "..", "O.", "OO", "..", "OO", "O.", "O.", "O.", ".O", "O.", ".O"],
+  ["..", "..", "O.", ".O", "OO", "..", ".O", "O.", "..", "..", ".O", ".O", "..", "O.", ".O", "O."],
+  ["..", "..", "O.", "O.", "O.", "..", "O.", "..", "..", "..", "O.", "O.", "O.", "..", "..", "O."]]])
 
     end
-
-  it "it can do a newline when it hits 80 characters" do
-      expect(@translator.braille_split("hello my name is bob and i like cookies a lot of cookies")).
-      to eq("O.O.O.O.O...OOOO..OOO.OOO....O.O..O.O.O...O.OOOO...O..O..OO.O...OOO.O.O..OO..O..O...O.O..O..O.OO..OO....OO..O...O.......O.....O.......O.........O...O.......O.O.O.....O.......O.O.O...O.......O.O.O.....O.")
-
-    end
-  end
+end
