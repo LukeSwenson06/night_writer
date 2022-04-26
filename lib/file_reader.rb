@@ -1,10 +1,15 @@
+require_relative 'translator'
+require_relative 'english_to_braille_dictionary'
+
 class FileReader
 attr_accessor :input,
-              :output
+              :output,
+              :translator
 
   def initialize(input, output)
     @input = File.open(input, "r")
     @output = File.open(output, "w")
+    @translator = Translator.new
   end
 
   def read
@@ -23,9 +28,8 @@ attr_accessor :input,
 
   def start(input, output)
     read_file = read
-    capitalized = read_file.upcase
     @input.close
-    @output.write(capitalized)
+    @output.write(@translator.finished_braille(read_file))
     @output.close
     puts welcome_message(input, output)
   end
